@@ -2,18 +2,18 @@ plugins {
     id 'java'
 }
 
-group 'com.tik'
+group 'com.jenet'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
-
-test {
-    useJUnitPlatform()
+allprojects {
+    compileJava {
+        options.release = 19
+        options.compilerArgs << "--enable-preview"
+        options.fork = true
+        options.forkOptions.executable = "D:/CustomJavaVersions/jdk-19/bin/javac" // ${jdk19_home}
+    }
 }
