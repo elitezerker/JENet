@@ -1,15 +1,13 @@
-plugins {
-    id 'java'
-}
-
-group 'com.jenet'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
 allprojects {
+    apply plugin: 'java'
+
+    group 'com.jenet'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
     compileJava {
         options.release = 19
         options.compilerArgs << "--enable-preview"
